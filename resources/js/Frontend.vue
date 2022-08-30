@@ -1,7 +1,7 @@
 <template>
   <div>
-    <ListaPost></ListaPost>
-    
+   <!--  <ListaPost></ListaPost> -->
+    <router-view></router-view>
   </div>
 </template>
 

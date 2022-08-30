@@ -2016,7 +2016,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("ListaPost")], 1);
+  return _c("div", [_c("router-view")], 1);
 };
 
 var staticRenderFns = [];
@@ -17835,6 +17835,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: "#app",
   render: function render(h) {
