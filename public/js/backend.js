@@ -49631,8 +49631,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Biagio\Documents\RepositoryBoolean\laravel-api\resources\js\backend.js */"./resources/js/backend.js");
-module.exports = __webpack_require__(/*! C:\Users\Biagio\Documents\RepositoryBoolean\laravel-api\resources\sass\backend.scss */"./resources/sass/backend.scss");
+__webpack_require__(/*! C:\Users\Biagio\Documents\RepositoryBoolean\laravel-boolpress\resources\js\backend.js */"./resources/js/backend.js");
+module.exports = __webpack_require__(/*! C:\Users\Biagio\Documents\RepositoryBoolean\laravel-boolpress\resources\sass\backend.scss */"./resources/sass/backend.scss");
 
 
 /***/ })
