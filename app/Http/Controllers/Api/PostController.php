@@ -11,8 +11,9 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::select("name","content")->get();
         $posts->map(function ($post) {
+            $post->content = substr($post->content, 0, 100) . "...";
 
             if ($post->cover_img) {
                 $post->cover_img = asset("storage/" . $post->cover_img);
@@ -33,7 +34,7 @@ class PostController extends Controller
         /* $post->load("category", "tags", "user:id,name"); */
 
         $post->cover_img = Storage::url($post->cover_img);
-        dd($post);
+        
         return response()->json($post);
     }
 }

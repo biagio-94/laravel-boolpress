@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import show from "./pages/posts/show.vue"
-
+import PageNotFound from "./pages/PageNotFound.vue"
 import home from "./pages/home.vue"
 
 import contacts from "./pages/contacts.vue"
@@ -20,8 +20,10 @@ const routes = [
   { path: "/", component: home, name: "home.index" },
 
   { path: "/contatti", component: contacts, name: "contact.index" },
-  { path: "/post/:id", component: show, name: "post.show" }
-  ,
+  { path: "/post/:id", component: show, name: "post.show" },
+  { path: "*", component: PageNotFound},
+
+  
 ]
 
 // dobbiamo esportare un istanza di VueRouter() con le eventuali configurazioni

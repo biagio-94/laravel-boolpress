@@ -1,8 +1,8 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Boolpress</a>
+        <a class="navbar-brand" href="/admin">Boolpress</a>
         <button
           class="navbar-toggler"
           type="button"

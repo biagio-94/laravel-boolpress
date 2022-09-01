@@ -1,12 +1,21 @@
 <template>
   <div>
-    <div v-for="name in posts" :key="name.id">
-      <h1>{{ name.name }}</h1>
-      <p>{{ name.content }}</p>
-
-      <img :src="name.cover_img" alt="" width="250px" />
-
-      
+    <div class="row row-cols-3">
+      <div class="col" v-for="name in posts" :key="name.id">
+        <div style="color:white" class="card mb-3 bg-dark " >
+          <div class="card-body">
+            <h3 class="card-title">{{ name.name }}</h3>
+            <p class="card-text">
+              {{ name.content }}
+            </p>
+            <router-link
+              class="btn btn-primary d-block mt-3"
+              :to="{ name: 'post.show', params: { id: name.id } }"
+              >Dettagli</router-link
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

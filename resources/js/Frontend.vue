@@ -2,7 +2,10 @@
   <div>
     <TheNavbar></TheNavbar>
    <!--  <ListaPost></ListaPost> -->
-    <router-view></router-view>
+   <div class="container mt-5 py-5">
+     
+     <router-view></router-view>
+    </div>
   </div>
 </template>
 

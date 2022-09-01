@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ post[1].id }}</h1>
+    <h1>{{ post.id }}</h1>
   </div>
 </template>
 
@@ -15,8 +15,8 @@ export default {
   },
   methods: {
     fetchdata() {
-      axios.get("/api/posts" ).then((resp) => {
-        console.log(resp.data);
+      axios.get("/api/posts/" + this.$route.params.id).then((resp) => {
+        
         this.post = resp.data;
       });
     },

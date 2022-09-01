@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Pagina Home</h1>
-    <h3>Lista Post</h3>
+   
+    <h1 class="py-5">Lista Post</h1>
     <ListaPost></ListaPost>
   </div>
 </template>
