@@ -17,6 +17,10 @@
         </div>
       </div>
     </div>
+    <div class="text-center" v-if="paginationData.current_page < paginationData.last_page">
+      <button class="btn btn-success" @click="loadOldPost()">Carica altri post</button>
+      
+    </div>
   </div>
 </template>
 
@@ -28,12 +32,21 @@ export default {
     return {
       posts: [],
       message: "Ciao ciao con le mani",
+      paginationData:{}
     };
   },
   methods: {
-    fetchdata() {
-      axios.get("/api/posts").then((resp) => {
-        this.posts = resp.data;
+    loadOldPost(){
+      const currentPage=this.paginationData.current_page
+      this.fetchdata(currentPage +1)
+    },
+    fetchdata(page=1) {
+      axios.get("/api/posts?page="+ page).then((resp) => {
+        console.log("posts" , resp.data.data);
+        console.log("pagination", resp.data);
+
+        this.posts.push(...resp.data.data)
+        this.paginationData=resp.data
       });
     },
   },

@@ -11,7 +11,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::select("name","content")->get();
+        $posts = Post::select("name", "content", "id")->paginate(3);
+        
         $posts->map(function ($post) {
             $post->content = substr($post->content, 0, 100) . "...";
 
@@ -21,10 +22,10 @@ class PostController extends Controller
                 // $post->cover_img = asset("images/image-placeholder.jpeg");
             }
 
-
+            
             return $post;
         });
-
+       
         return response()->json($posts);
     }
     public function show($id)
@@ -34,7 +35,7 @@ class PostController extends Controller
         /* $post->load("category", "tags", "user:id,name"); */
 
         $post->cover_img = Storage::url($post->cover_img);
-        
+
         return response()->json($post);
     }
 }

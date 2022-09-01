@@ -5174,20 +5174,45 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       posts: [],
-      message: "Ciao ciao con le mani"
+      message: "Ciao ciao con le mani",
+      paginationData: {}
     };
   },
   methods: {
+    loadOldPost: function loadOldPost() {
+      var currentPage = this.paginationData.current_page;
+      this.fetchdata(currentPage + 1);
+    },
     fetchdata: function fetchdata() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/posts").then(function (resp) {
-        _this.posts = resp.data;
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/posts?page=" + page).then(function (resp) {
+        var _this$posts;
+
+        console.log("posts", resp.data.data);
+        console.log("pagination", resp.data);
+
+        (_this$posts = _this.posts).push.apply(_this$posts, _toConsumableArray(resp.data.data));
+
+        _this.paginationData = resp.data;
       });
     }
   },
@@ -5378,7 +5403,16 @@ var render = function render() {
         }
       }
     }, [_vm._v("Dettagli")])], 1)])]);
-  }), 0)]);
+  }), 0), _vm._v(" "), _vm.paginationData.current_page < _vm.paginationData.last_page ? _c("div", {
+    staticClass: "text-center"
+  }, [_c("button", {
+    staticClass: "btn btn-success",
+    on: {
+      click: function click($event) {
+        return _vm.loadOldPost();
+      }
+    }
+  }, [_vm._v("Carica altri post")])]) : _vm._e()]);
 };
 
 var staticRenderFns = [];
