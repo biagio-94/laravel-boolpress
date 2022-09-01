@@ -8,7 +8,8 @@
         {{-- <link rel="stylesheet" href="{{ asset('css/frontend.css') }}"> --}}
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{asset("css/backend.css")}}">
+        <script src="{{asset("js/frontend.js")}}" defer></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -96,6 +97,6 @@
                 </div>
             </div>
         </div>
-        <script src="{{asset("js/frontend.js")}}"></script>
+        
     </body>
 </html>

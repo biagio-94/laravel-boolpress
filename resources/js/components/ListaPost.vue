@@ -5,6 +5,8 @@
       <p>{{ name.content }}</p>
 
       <img :src="name.cover_img" alt="" width="250px" />
+
+      
     </div>
   </div>
 </template>

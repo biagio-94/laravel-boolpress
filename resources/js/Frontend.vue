@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TheNavbar></TheNavbar>
    <!--  <ListaPost></ListaPost> -->
     <router-view></router-view>
   </div>
@@ -10,10 +11,11 @@
 <script>
 import axios from "axios";
 import ListaPost from "./components/ListaPost.vue";
+import TheNavbar from "./components/TheNavbar.vue";
 
 export default {
     
-    components: { ListaPost }
+    components: { ListaPost, TheNavbar }
 };
 </script>
 
