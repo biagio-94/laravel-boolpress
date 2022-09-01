@@ -25,6 +25,7 @@ export default {
                 name: this.name,
                 content: this.content
             })
+            console.log("Dati inviati: " ,"Nome: " + this.name ,"Contenuto: " + this.content);
         }
     }
 }

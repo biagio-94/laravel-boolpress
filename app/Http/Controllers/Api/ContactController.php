@@ -8,16 +8,18 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $data = $request->all();
-
-       
-        return [
+        $showthis = [
             "id" => rand(1, 1000),
             "name" => $data["name"],
             "message" => $data["content"],
             "created_at" => Carbon::now()->toDateTimeString(),
             "updated_at" => Carbon::now()->toDateTimeString(),
         ];
+        dd($showthis);
+
+        return $showthis;
     }
 }
