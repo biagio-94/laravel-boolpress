@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/admin">Boolpress</a>
+        <a class="navbar-brand" href="/boolpress">Boolpress</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
+              <router-link class="nav-link active" aria-current="page" to="/">Posts</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/contatti">Contatti</router-link>
@@ -30,7 +30,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                User
+                Il Tuo Blog
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/login">Log-In</a></li>

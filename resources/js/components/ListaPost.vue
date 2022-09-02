@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1 class="py-5" v-if="!isVisible">Lista Post Totali: </h1>
+    <h1 class="py-5" v-else>Post di: {{ nomeUserPost }}</h1>
     <div class="row row-cols-3">
       <div class="col" v-for="post in posts" :key="post.id">
         <div style="color: white" class="card mb-3 bg-dark">
@@ -8,7 +10,7 @@
             <p class="card-text">
               {{ post.content }}
             </p>
-            <a to="#" class="card-link" @click="filterPost(post.user_id)">{{
+            <a to="#" class="card-link" @click="filterPost(post.user_id, post.user.name)">{{
               post.user.name
             }}</a>
             <router-link
@@ -30,7 +32,7 @@
       </button>
     </div>
     <div class="text-center" :class="isVisible ? `` : `d-none`">
-      <button class="btn btn-success" @click="fetchdata((1))">Indietro</button>
+      <button class="btn btn-success" @click="fetchdata(1)">Indietro</button>
     </div>
   </div>
 </template>
@@ -45,15 +47,17 @@ export default {
       message: "Ciao ciao con le mani",
       paginationData: {},
       isVisible: false,
+      nomeUserPost: "",
     };
   },
   methods: {
-    filterPost(idUtente) {
+    filterPost(idUtente,nomeUtente) {
       axios.get("/api/users/" + idUtente).then((resp) => {
         this.posts = [];
         this.posts.push(...resp.data);
         this.isVisible = true;
       });
+      this.nomeUserPost = nomeUtente;
     },
     loadOldPost() {
       const currentPage = this.paginationData.current_page;
@@ -62,7 +66,7 @@ export default {
     fetchdata(page = 1) {
       if (this.isVisible) {
         this.posts = [];
-        this.isVisible=false
+        this.isVisible = false;
       }
       axios.get("/api/posts?page=" + page).then((resp) => {
         console.log("posts", resp.data.data);

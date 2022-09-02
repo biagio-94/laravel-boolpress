@@ -5193,11 +5193,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       posts: [],
       message: "Ciao ciao con le mani",
       paginationData: {},
-      isVisible: false
+      isVisible: false,
+      nomeUserPost: ""
     };
   },
   methods: {
-    filterPost: function filterPost(idUtente) {
+    filterPost: function filterPost(idUtente, nomeUtente) {
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/users/" + idUtente).then(function (resp) {
@@ -5209,6 +5210,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         _this.isVisible = true;
       });
+      this.nomeUserPost = nomeUtente;
     },
     loadOldPost: function loadOldPost() {
       var currentPage = this.paginationData.current_page;
@@ -5395,7 +5397,11 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", {
+  return _c("div", [!_vm.isVisible ? _c("h1", {
+    staticClass: "py-5"
+  }, [_vm._v("Lista Post Totali: ")]) : _c("h1", {
+    staticClass: "py-5"
+  }, [_vm._v("Post di: " + _vm._s(_vm.nomeUserPost))]), _vm._v(" "), _c("div", {
     staticClass: "row row-cols-3"
   }, _vm._l(_vm.posts, function (post) {
     return _c("div", {
@@ -5419,7 +5425,7 @@ var render = function render() {
       },
       on: {
         click: function click($event) {
-          return _vm.filterPost(post.user_id);
+          return _vm.filterPost(post.user_id, post.user.name);
         }
       }
     }, [_vm._v(_vm._s(post.user.name))]), _vm._v(" "), _c("router-link", {
@@ -5450,7 +5456,7 @@ var render = function render() {
     staticClass: "btn btn-success",
     on: {
       click: function click($event) {
-        _vm.fetchdata(1);
+        return _vm.fetchdata(1);
       }
     }
   }, [_vm._v("Indietro")])])]);
@@ -5484,7 +5490,7 @@ var render = function render() {
   }, [_c("a", {
     staticClass: "navbar-brand",
     attrs: {
-      href: "/admin"
+      href: "/boolpress"
     }
   }, [_vm._v("Boolpress")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "collapse navbar-collapse",
@@ -5501,7 +5507,7 @@ var render = function render() {
       "aria-current": "page",
       to: "/"
     }
-  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("Posts")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
@@ -5542,7 +5548,7 @@ var staticRenderFns = [function () {
       "data-bs-toggle": "dropdown",
       "aria-expanded": "false"
     }
-  }, [_vm._v("\n              User\n            ")]), _vm._v(" "), _c("ul", {
+  }, [_vm._v("\n              Il Tuo Blog\n            ")]), _vm._v(" "), _c("ul", {
     staticClass: "dropdown-menu"
   }, [_c("li", [_c("a", {
     staticClass: "dropdown-item",
@@ -5584,6 +5590,35 @@ var staticRenderFns = [function () {
       type: "submit"
     }
   }, [_vm._v("\n            Search\n          ")])]);
+}];
+render._withStripped = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/BoolpressHomePage.vue?vue&type=template&id=721aade4&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/BoolpressHomePage.vue?vue&type=template&id=721aade4& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function render() {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _vm._m(0);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", [_c("h1", [_vm._v("La vera Homepage")])]);
 }];
 render._withStripped = true;
 
@@ -5716,9 +5751,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("h1", {
-    staticClass: "py-5"
-  }, [_vm._v("Lista Post")]), _vm._v(" "), _c("ListaPost")], 1);
+  return _c("div", [_c("ListaPost")], 1);
 };
 
 var staticRenderFns = [];
@@ -44055,6 +44088,59 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 /***/ }),
 
+/***/ "./resources/js/pages/BoolpressHomePage.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/pages/BoolpressHomePage.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _BoolpressHomePage_vue_vue_type_template_id_721aade4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BoolpressHomePage.vue?vue&type=template&id=721aade4& */ "./resources/js/pages/BoolpressHomePage.vue?vue&type=template&id=721aade4&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _BoolpressHomePage_vue_vue_type_template_id_721aade4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BoolpressHomePage_vue_vue_type_template_id_721aade4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/BoolpressHomePage.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/BoolpressHomePage.vue?vue&type=template&id=721aade4&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/pages/BoolpressHomePage.vue?vue&type=template&id=721aade4& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_BoolpressHomePage_vue_vue_type_template_id_721aade4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!../../../node_modules/vue-loader/lib??vue-loader-options!./BoolpressHomePage.vue?vue&type=template&id=721aade4& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/BoolpressHomePage.vue?vue&type=template&id=721aade4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_BoolpressHomePage_vue_vue_type_template_id_721aade4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ref_6_node_modules_vue_loader_lib_index_js_vue_loader_options_BoolpressHomePage_vue_vue_type_template_id_721aade4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/PageNotFound.vue":
 /*!*********************************************!*\
   !*** ./resources/js/pages/PageNotFound.vue ***!
@@ -44345,8 +44431,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_posts_show_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/posts/show.vue */ "./resources/js/pages/posts/show.vue");
 /* harmony import */ var _pages_PageNotFound_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/PageNotFound.vue */ "./resources/js/pages/PageNotFound.vue");
-/* harmony import */ var _pages_home_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/home.vue */ "./resources/js/pages/home.vue");
-/* harmony import */ var _pages_contacts_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/contacts.vue */ "./resources/js/pages/contacts.vue");
+/* harmony import */ var _pages_BoolpressHomePage_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/BoolpressHomePage.vue */ "./resources/js/pages/BoolpressHomePage.vue");
+/* harmony import */ var _pages_home_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/home.vue */ "./resources/js/pages/home.vue");
+/* harmony import */ var _pages_contacts_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/contacts.vue */ "./resources/js/pages/contacts.vue");
+
 
 
 
@@ -44363,12 +44451,15 @@ var routes = [
   name = nome da assegnare a questa rotta
 */
 {
+  path: "/boolpress",
+  component: _pages_BoolpressHomePage_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
   path: "/",
-  component: _pages_home_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  component: _pages_home_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
   name: "home.index"
 }, {
   path: "/contatti",
-  component: _pages_contacts_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+  component: _pages_contacts_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
   name: "contact.index"
 }, {
   path: "/post/:id",
