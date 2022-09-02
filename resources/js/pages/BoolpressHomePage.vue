@@ -1,5 +1,13 @@
 <template>
-    <div>
-        <h1>La vera Homepage</h1>
+    <div >
+        <Jumbotrone></Jumbotrone>
+        
     </div>
 </template>
+
+<script>
+import Jumbotrone from '../components/Jumbotrone.vue';
+export default {
+    components: { Jumbotrone }
+}
+</script>

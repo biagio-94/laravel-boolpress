@@ -2,11 +2,11 @@
   <div>
     <TheNavbar></TheNavbar>
    <!--  <ListaPost></ListaPost> -->
-   <div class="container mt-5 py-5">
+
      
      <router-view></router-view>
     </div>
-  </div>
+ 
 </template>
 
 
