@@ -5192,27 +5192,47 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     return {
       posts: [],
       message: "Ciao ciao con le mani",
-      paginationData: {}
+      paginationData: {},
+      isVisible: false
     };
   },
   methods: {
+    filterPost: function filterPost(idUtente) {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/users/" + idUtente).then(function (resp) {
+        var _this$posts;
+
+        _this.posts = [];
+
+        (_this$posts = _this.posts).push.apply(_this$posts, _toConsumableArray(resp.data));
+
+        _this.isVisible = true;
+      });
+    },
     loadOldPost: function loadOldPost() {
       var currentPage = this.paginationData.current_page;
       this.fetchdata(currentPage + 1);
     },
     fetchdata: function fetchdata() {
-      var _this = this;
+      var _this2 = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+      if (this.isVisible) {
+        this.posts = [];
+        this.isVisible = false;
+      }
+
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/posts?page=" + page).then(function (resp) {
-        var _this$posts;
+        var _this2$posts;
 
         console.log("posts", resp.data.data);
         console.log("pagination", resp.data);
 
-        (_this$posts = _this.posts).push.apply(_this$posts, _toConsumableArray(resp.data.data));
+        (_this2$posts = _this2.posts).push.apply(_this2$posts, _toConsumableArray(resp.data.data));
 
-        _this.paginationData = resp.data;
+        _this2.paginationData = resp.data;
       });
     }
   },
@@ -5377,9 +5397,9 @@ var render = function render() {
 
   return _c("div", [_c("div", {
     staticClass: "row row-cols-3"
-  }, _vm._l(_vm.posts, function (name) {
+  }, _vm._l(_vm.posts, function (post) {
     return _c("div", {
-      key: name.id,
+      key: post.id,
       staticClass: "col"
     }, [_c("div", {
       staticClass: "card mb-3 bg-dark",
@@ -5390,21 +5410,32 @@ var render = function render() {
       staticClass: "card-body"
     }, [_c("h3", {
       staticClass: "card-title"
-    }, [_vm._v(_vm._s(name.name))]), _vm._v(" "), _c("p", {
+    }, [_vm._v(_vm._s(post.name))]), _vm._v(" "), _c("p", {
       staticClass: "card-text"
-    }, [_vm._v("\n            " + _vm._s(name.content) + "\n          ")]), _vm._v(" "), _c("router-link", {
+    }, [_vm._v("\n            " + _vm._s(post.content) + "\n          ")]), _vm._v(" "), _c("a", {
+      staticClass: "card-link",
+      attrs: {
+        to: "#"
+      },
+      on: {
+        click: function click($event) {
+          return _vm.filterPost(post.user_id);
+        }
+      }
+    }, [_vm._v(_vm._s(post.user.name))]), _vm._v(" "), _c("router-link", {
       staticClass: "btn btn-primary d-block mt-3",
       attrs: {
         to: {
           name: "post.show",
           params: {
-            id: name.id
+            id: post.id
           }
         }
       }
     }, [_vm._v("Dettagli")])], 1)])]);
   }), 0), _vm._v(" "), _vm.paginationData.current_page < _vm.paginationData.last_page ? _c("div", {
-    staticClass: "text-center"
+    staticClass: "text-center",
+    "class": _vm.isVisible ? "d-none" : ""
   }, [_c("button", {
     staticClass: "btn btn-success",
     on: {
@@ -5412,7 +5443,17 @@ var render = function render() {
         return _vm.loadOldPost();
       }
     }
-  }, [_vm._v("Carica altri post")])]) : _vm._e()]);
+  }, [_vm._v("\n      Carica altri post\n    ")])]) : _vm._e(), _vm._v(" "), _c("div", {
+    staticClass: "text-center",
+    "class": _vm.isVisible ? "" : "d-none"
+  }, [_c("button", {
+    staticClass: "btn btn-success",
+    on: {
+      click: function click($event) {
+        _vm.fetchdata(1);
+      }
+    }
+  }, [_vm._v("Indietro")])])]);
 };
 
 var staticRenderFns = [];
