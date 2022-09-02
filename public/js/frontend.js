@@ -5811,7 +5811,9 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("ListaPost")], 1);
+  return _c("div", {
+    staticClass: "container py-5"
+  }, [_c("ListaPost")], 1);
 };
 
 var staticRenderFns = [];
