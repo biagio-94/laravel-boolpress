@@ -1,18 +1,19 @@
 <template>
-  <div>
-    <h1 class="py-5" v-if="!isVisible">Lista Post Totali: </h1>
-    <h1 class="py-5" v-else>Post di: {{ nomeUserPost }}</h1>
-    <div class="row row-cols-3">
+  <div class="mt-5 pt-2">
+    <h1 class="py-5 text-center maintitle" v-if="!isVisible">Post dei nostri utenti </h1>
+    <h1 class="py-5 text-center maintitle" v-else>Post di {{ nomeUserPost }}</h1>
+    <div class="px-5 py-4">
+      <div class="row row-cols-3">
       <div class="col" v-for="post in posts" :key="post.id">
         <div style="color: white" class="card mb-3 bg-dark">
           <div class="card-body">
-            <h3 class="card-title">{{ post.name }}</h3>
-            <p class="card-text">
+            <h3 class="card-title text-center">{{ post.name }}</h3>
+            <p class="card-text py-3">
               {{ post.content }}
             </p>
-            <a to="#" class="card-link" @click="filterPost(post.user_id, post.user.name)">{{
+            <span>Autore: <a to="#" class="card-link" @click="filterPost(post.user_id, post.user.name)">{{
               post.user.name
-            }}</a>
+            }}</a></span>
             <router-link
               class="btn btn-primary d-block mt-3"
               :to="{ name: 'post.show', params: { id: post.id } }"
@@ -21,6 +22,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     <div
       class="text-center"
@@ -82,3 +84,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+  .maintitle{
+    font-weight: bolder;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.336);
+  }
+</style>

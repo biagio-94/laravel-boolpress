@@ -9,11 +9,12 @@
             @foreach ($posts as $post)
                 <div class="col">
 
-                    <div class="card-body mb-5 bg-info">
+                    <div  class="card-body mb-5 bg-info py-3 px-2 ">
 
-                        <h2>Autore Post: {{ $post->user ? $post->user->name : '' }}</h2>
-                        <h5 class="card-title">{{ $post->name }}</h5>
-                        <p class="card-text">{{ $post->content }}</p>
+                        
+                        <h4 class="card-title text-center">{{ $post->name }}</h4>
+                        <p class="card-text py-3">{{ $post->content }}</p>
+                        <h6 class="card-title">Autore: {{ $post->user ? $post->user->name : '' }}</h6>
                         <div>
                             Tags:
                             @foreach ($post->tags as $tag)

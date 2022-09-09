@@ -17,13 +17,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link class="nav-link active" aria-current="page" to="/">Posts</router-link>
+              <router-link class="nav-link active" aria-current="page" to="/"
+                >Posts</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/contatti">Contatti</router-link>
+              <router-link class="nav-link" to="/contatti"
+                >Contatti</router-link
+              >
             </li>
             <li class="nav-item dropdown">
               <a
+                v-if="!user"
                 class="nav-link dropdown-toggle"
                 href="#"
                 role="button"
@@ -32,6 +37,13 @@
               >
                 Il Tuo Blog
               </a>
+              <a
+                class="nav-link "
+                href="/admin"
+                
+                v-else
+                >{{ user.name }}</a
+              >
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/login">Log-In</a></li>
                 <li><a class="dropdown-item" href="/register">Register</a></li>
@@ -41,7 +53,6 @@
                 </li>
               </ul>
             </li>
-            
           </ul>
           <form class="d-flex" role="search">
             <input
@@ -62,5 +73,22 @@
 
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      user: null,
+    };
+  },
+  methods: {
+    fetchData() {
+      axios.get("/api/user").then((resp) => {
+        this.user = resp.data;
+      });
+    },
+  },
+  mounted() {
+    this.fetchData();
+  },
+};
 </script>

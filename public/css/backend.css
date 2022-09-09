@@ -55,7 +55,7 @@
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 0.9rem;
+  --bs-body-font-size: 1.2rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.6;
   --bs-body-color: #212529;
@@ -129,60 +129,67 @@ h1,
 
 h1,
 .h1 {
-  font-size: calc(1.35rem + 1.2vw);
+  font-size: calc(1.425rem + 2.1vw);
 }
 
 @media (min-width: 1200px) {
   h1,
   .h1 {
-    font-size: 2.25rem;
+    font-size: 3rem;
   }
 }
 
 h2,
 .h2 {
-  font-size: calc(1.305rem + 0.66vw);
+  font-size: calc(1.365rem + 1.38vw);
 }
 
 @media (min-width: 1200px) {
   h2,
   .h2 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }
 
 h3,
 .h3 {
-  font-size: calc(1.2825rem + 0.39vw);
+  font-size: calc(1.335rem + 1.02vw);
 }
 
 @media (min-width: 1200px) {
   h3,
   .h3 {
-    font-size: 1.575rem;
+    font-size: 2.1rem;
   }
 }
 
 h4,
 .h4 {
-  font-size: calc(1.26rem + 0.12vw);
+  font-size: calc(1.305rem + 0.66vw);
 }
 
 @media (min-width: 1200px) {
   h4,
   .h4 {
-    font-size: 1.35rem;
+    font-size: 1.8rem;
   }
 }
 
 h5,
 .h5 {
-  font-size: 1.125rem;
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+@media (min-width: 1200px) {
+  h5,
+  .h5 {
+    font-size: 1.5rem;
+  }
 }
 
 h6,
 .h6 {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 p {
@@ -521,8 +528,14 @@ progress {
 }
 
 .lead {
-  font-size: 1.125rem;
+  font-size: calc(1.275rem + 0.3vw);
   font-weight: 300;
+}
+
+@media (min-width: 1200px) {
+  .lead {
+    font-size: 1.5rem;
+  }
 }
 
 .display-1 {
@@ -622,7 +635,13 @@ progress {
 
 .blockquote {
   margin-bottom: 1rem;
-  font-size: 1.125rem;
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+@media (min-width: 1200px) {
+  .blockquote {
+    font-size: 1.5rem;
+  }
 }
 
 .blockquote > :last-child {
@@ -2274,13 +2293,19 @@ progress {
 .col-form-label-lg {
   padding-top: calc(0.5rem + 1px);
   padding-bottom: calc(0.5rem + 1px);
-  font-size: 1.125rem;
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+@media (min-width: 1200px) {
+  .col-form-label-lg {
+    font-size: 1.5rem;
+  }
 }
 
 .col-form-label-sm {
   padding-top: calc(0.25rem + 1px);
   padding-bottom: calc(0.25rem + 1px);
-  font-size: 0.7875rem;
+  font-size: 1.05rem;
 }
 
 .form-text {
@@ -2293,7 +2318,7 @@ progress {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.6;
   color: #212529;
@@ -2399,7 +2424,7 @@ progress {
 .form-control-sm {
   min-height: calc(1.6em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
-  font-size: 0.7875rem;
+  font-size: 1.05rem;
   border-radius: 0.25rem;
 }
 
@@ -2413,8 +2438,14 @@ progress {
 .form-control-lg {
   min-height: calc(1.6em + 1rem + 2px);
   padding: 0.5rem 1rem;
-  font-size: 1.125rem;
+  font-size: calc(1.275rem + 0.3vw);
   border-radius: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  .form-control-lg {
+    font-size: 1.5rem;
+  }
 }
 
 .form-control-lg::file-selector-button {
@@ -2468,7 +2499,7 @@ textarea.form-control-lg {
   width: 100%;
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
   -moz-padding-start: calc(0.75rem - 3px);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.6;
   color: #212529;
@@ -2516,7 +2547,7 @@ textarea.form-control-lg {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
-  font-size: 0.7875rem;
+  font-size: 1.05rem;
   border-radius: 0.25rem;
 }
 
@@ -2524,13 +2555,19 @@ textarea.form-control-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  font-size: 1.125rem;
+  font-size: calc(1.275rem + 0.3vw);
   border-radius: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  .form-select-lg {
+    font-size: 1.5rem;
+  }
 }
 
 .form-check {
   display: block;
-  min-height: 1.44rem;
+  min-height: 1.92rem;
   padding-left: 1.5em;
   margin-bottom: 0.125rem;
 }
@@ -2907,7 +2944,7 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
   padding: 0.375rem 0.75rem;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.6;
   color: #212529;
@@ -2923,8 +2960,17 @@ textarea.form-control-lg {
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: 1.125rem;
+  font-size: calc(1.275rem + 0.3vw);
   border-radius: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  .input-group-lg > .form-control,
+  .input-group-lg > .form-select,
+  .input-group-lg > .input-group-text,
+  .input-group-lg > .btn {
+    font-size: 1.5rem;
+  }
 }
 
 .input-group-sm > .form-control,
@@ -2932,7 +2978,7 @@ textarea.form-control-lg {
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.7875rem;
+  font-size: 1.05rem;
   border-radius: 0.25rem;
 }
 
@@ -2981,7 +3027,7 @@ textarea.form-control-lg {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: 0.1rem;
-  font-size: 0.7875rem;
+  font-size: 1.05rem;
   color: #000;
   background-color: rgba(56, 193, 114, 0.9);
   border-radius: 0.375rem;
@@ -3096,7 +3142,7 @@ textarea.form-control.is-valid {
   max-width: 100%;
   padding: 0.25rem 0.5rem;
   margin-top: 0.1rem;
-  font-size: 0.7875rem;
+  font-size: 1.05rem;
   color: #000;
   background-color: rgba(227, 52, 47, 0.9);
   border-radius: 0.375rem;
@@ -3199,7 +3245,7 @@ textarea.form-control.is-invalid {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
-  --bs-btn-font-size: 0.9rem;
+  --bs-btn-font-size: 1.2rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.6;
   --bs-btn-color: #212529;
@@ -3579,15 +3625,22 @@ fieldset:disabled .btn {
 .btn-group-lg > .btn {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
-  --bs-btn-font-size: 1.125rem;
+  --bs-btn-font-size: calc(1.275rem + 0.3vw);
   --bs-btn-border-radius: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  .btn-lg,
+  .btn-group-lg > .btn {
+    --bs-btn-font-size: 1.5rem;
+  }
 }
 
 .btn-sm,
 .btn-group-sm > .btn {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
-  --bs-btn-font-size: 0.7875rem;
+  --bs-btn-font-size: 1.05rem;
   --bs-btn-border-radius: 0.25rem;
 }
 
@@ -3666,7 +3719,7 @@ fieldset:disabled .btn {
   --bs-dropdown-padding-x: 0;
   --bs-dropdown-padding-y: 0.5rem;
   --bs-dropdown-spacer: 0.125rem;
-  --bs-dropdown-font-size: 0.9rem;
+  --bs-dropdown-font-size: 1.2rem;
   --bs-dropdown-color: #212529;
   --bs-dropdown-bg: #fff;
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
@@ -3963,7 +4016,7 @@ fieldset:disabled .btn {
   display: block;
   padding: var(--bs-dropdown-header-padding-y) var(--bs-dropdown-header-padding-x);
   margin-bottom: 0;
-  font-size: 0.7875rem;
+  font-size: 1.05rem;
   color: var(--bs-dropdown-header-color);
   white-space: nowrap;
 }
@@ -4248,15 +4301,15 @@ fieldset:disabled .btn {
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
-  --bs-navbar-brand-padding-y: 0.32rem;
+  --bs-navbar-brand-padding-y: 0.26rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.125rem;
+  --bs-navbar-brand-font-size: 1.5rem;
   --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
-  --bs-navbar-toggler-font-size: 1.125rem;
+  --bs-navbar-toggler-font-size: 1.5rem;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
   --bs-navbar-toggler-border-radius: 0.375rem;
@@ -4963,7 +5016,7 @@ fieldset:disabled .btn {
   align-items: center;
   width: 100%;
   padding: var(--bs-accordion-btn-padding-y) var(--bs-accordion-btn-padding-x);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: var(--bs-accordion-btn-color);
   text-align: left;
   background-color: var(--bs-accordion-btn-bg);
@@ -5121,7 +5174,7 @@ fieldset:disabled .btn {
 .pagination {
   --bs-pagination-padding-x: 0.75rem;
   --bs-pagination-padding-y: 0.375rem;
-  --bs-pagination-font-size: 0.9rem;
+  --bs-pagination-font-size: 1.2rem;
   --bs-pagination-color: var(--bs-link-color);
   --bs-pagination-bg: #fff;
   --bs-pagination-border-width: 1px;
@@ -5210,14 +5263,20 @@ fieldset:disabled .btn {
 .pagination-lg {
   --bs-pagination-padding-x: 1.5rem;
   --bs-pagination-padding-y: 0.75rem;
-  --bs-pagination-font-size: 1.125rem;
+  --bs-pagination-font-size: calc(1.275rem + 0.3vw);
   --bs-pagination-border-radius: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  .pagination-lg {
+    --bs-pagination-font-size: 1.5rem;
+  }
 }
 
 .pagination-sm {
   --bs-pagination-padding-x: 0.5rem;
   --bs-pagination-padding-y: 0.25rem;
-  --bs-pagination-font-size: 0.7875rem;
+  --bs-pagination-font-size: 1.05rem;
   --bs-pagination-border-radius: 0.25rem;
 }
 
@@ -5381,7 +5440,7 @@ fieldset:disabled .btn {
 
 .progress {
   --bs-progress-height: 1rem;
-  --bs-progress-font-size: 0.675rem;
+  --bs-progress-font-size: 0.9rem;
   --bs-progress-bg: #e9ecef;
   --bs-progress-border-radius: 0.375rem;
   --bs-progress-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
@@ -6298,7 +6357,7 @@ fieldset:disabled .btn {
   --bs-tooltip-padding-x: 0.5rem;
   --bs-tooltip-padding-y: 0.25rem;
   --bs-tooltip-margin: ;
-  --bs-tooltip-font-size: 0.7875rem;
+  --bs-tooltip-font-size: 1.05rem;
   --bs-tooltip-color: #fff;
   --bs-tooltip-bg: #000;
   --bs-tooltip-border-radius: 0.375rem;
@@ -6417,7 +6476,7 @@ fieldset:disabled .btn {
 .popover {
   --bs-popover-zindex: 1070;
   --bs-popover-max-width: 276px;
-  --bs-popover-font-size: 0.7875rem;
+  --bs-popover-font-size: 1.05rem;
   --bs-popover-bg: #fff;
   --bs-popover-border-width: 1px;
   --bs-popover-border-color: var(--bs-border-color-translucent);
@@ -6426,7 +6485,7 @@ fieldset:disabled .btn {
   --bs-popover-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --bs-popover-header-padding-x: 1rem;
   --bs-popover-header-padding-y: 0.5rem;
-  --bs-popover-header-font-size: 0.9rem;
+  --bs-popover-header-font-size: 1.2rem;
   --bs-popover-header-color: var(--bs-heading-color);
   --bs-popover-header-bg: #f0f0f0;
   --bs-popover-body-padding-x: 1rem;
@@ -8925,27 +8984,27 @@ fieldset:disabled .btn {
 }
 
 .fs-1 {
-  font-size: calc(1.35rem + 1.2vw) !important;
+  font-size: calc(1.425rem + 2.1vw) !important;
 }
 
 .fs-2 {
-  font-size: calc(1.305rem + 0.66vw) !important;
+  font-size: calc(1.365rem + 1.38vw) !important;
 }
 
 .fs-3 {
-  font-size: calc(1.2825rem + 0.39vw) !important;
+  font-size: calc(1.335rem + 1.02vw) !important;
 }
 
 .fs-4 {
-  font-size: calc(1.26rem + 0.12vw) !important;
+  font-size: calc(1.305rem + 0.66vw) !important;
 }
 
 .fs-5 {
-  font-size: 1.125rem !important;
+  font-size: calc(1.275rem + 0.3vw) !important;
 }
 
 .fs-6 {
-  font-size: 0.9rem !important;
+  font-size: 1.2rem !important;
 }
 
 .fst-italic {
@@ -12576,19 +12635,23 @@ fieldset:disabled .btn {
 
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 2.25rem !important;
+    font-size: 3rem !important;
   }
 
   .fs-2 {
-    font-size: 1.8rem !important;
+    font-size: 2.4rem !important;
   }
 
   .fs-3 {
-    font-size: 1.575rem !important;
+    font-size: 2.1rem !important;
   }
 
   .fs-4 {
-    font-size: 1.35rem !important;
+    font-size: 1.8rem !important;
+  }
+
+  .fs-5 {
+    font-size: 1.5rem !important;
   }
 }
 

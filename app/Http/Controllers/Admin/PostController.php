@@ -20,7 +20,14 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        $posts->map(function ($post) {
+            $post->content = substr($post->content, 0, 100) . "...";
 
+            
+
+            
+            return $post;
+        });
 
         return view("admin.posts.index", compact("posts"));
     }
